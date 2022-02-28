@@ -1,0 +1,10 @@
+.userMessage{
+    background-color: rgb(26, 26, 240);
+    color: white;
+    padding: .4rem .6rem;
+    border-radius: 20px;
+}
+.chatbotMessage{
+    border-radius: 20px;
+    padding: .4rem .6rem;
+}
