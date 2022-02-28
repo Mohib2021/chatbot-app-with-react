@@ -1,0 +1,18 @@
+.chatBoxContainer{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chatBox{
+  padding: 2rem 1rem;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 10px;
+  width: 30vw;
+}
+.chatShowBox{
+    min-height: 50vh;
+    border: 1px solid rgb(206, 206, 206);
+    margin: 1rem 0;
+    border-radius: 5px;
+}

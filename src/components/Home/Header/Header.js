@@ -24,8 +24,6 @@ function Header() {
                         <Nav.Link className="active" >
 							John Doe
 						</Nav.Link>
-						
-						
 					</div>
 					<div
 						onClick={() => setIsActive(!isActive)}
