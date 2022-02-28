@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Chat from './Chat/Chat'
 import style from "./ChatBox.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { getMessageFromStorage, setMessageToStorage } from '../../Custom/Custom'
 
 const ChatBox = () => {
     const [message, setMessage] = useState([]);
@@ -11,13 +12,23 @@ const ChatBox = () => {
     const handleSendMessage = (event)=>{
         event.preventDefault();
         const userSendMessage = userMessageRef.current.value;
-        setMessage(prevMessage => [...prevMessage, {
-            id:prevMessage.length,
-            userMessage: userSendMessage,
-            chatbotMessage: userSendMessage
-        }]);
+        setMessage(prevMessage => {
+            const updatedMessage = [...prevMessage, {
+                id:prevMessage.length,
+                userMessage: userSendMessage,
+                chatbotMessage: userSendMessage
+            }];
+            setMessageToStorage(updatedMessage);
+            return updatedMessage;
+        });
         userMessageRef.current.value = "";
     }
+    useEffect(()=>{
+        const gottenMessage = getMessageFromStorage();
+        if(gottenMessage){
+            setMessage(gottenMessage);
+        }
+    },[])
   return (
    <>
    <div className={style.chatBoxContainer}>
