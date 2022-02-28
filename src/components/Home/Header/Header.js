@@ -10,7 +10,7 @@ function Header() {
 			<Navbar bg="dark" variant="dark">
 				<Container>
 					<Navbar.Brand>
-                    <img className={style.logoImg} src="https://img.icons8.com/ios/100/000000/chat--v1.png"/>
+                    <img className={style.logoImg} alt="logo-img" src="https://img.icons8.com/ios/100/000000/chat--v1.png"/>
 						
 					</Navbar.Brand>
 					<div
